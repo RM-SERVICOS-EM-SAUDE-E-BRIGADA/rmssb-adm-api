@@ -48,3 +48,6 @@ gem 'kaminari', '~> 1.2', '>= 1.2.1'
 gem 'rails-i18n', '~> 6.0.0' # For 6.0.0 or higher
 
 gem 'tzinfo-data', platforms: %I[mingw mswin x64_mingw jruby]
+
+# ActiveModel::Serializer implementation and Rails hooks
+gem 'active_model_serializers', '~> 0.10.12'
