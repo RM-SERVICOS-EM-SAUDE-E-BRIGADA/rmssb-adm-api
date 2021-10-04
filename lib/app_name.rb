@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AppName
   def initialize(app, app_name)
     @app = app
@@ -6,7 +8,7 @@ class AppName
 
   def call(env)
     status, headers, response = @app.call(env)
-    headers.merge!({'X-APP-NAME' => "#{@app_name}"})
-     [status, headers, [response.body]]
+    headers.merge!({ 'X-APP-NAME' => @app_name.to_s })
+    [status, headers, [response.body]]
   end
 end
