@@ -8,10 +8,6 @@ class CategoriesController < ApplicationController
     render json: @categories
   end
 
-  def show; end
-
-  def edit; end
-
   def create
     @category = Category.new(resource_params)
 

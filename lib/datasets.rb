@@ -8,3 +8,9 @@ CATEGORIES = [
   { nome: 'EVENTO' },
   { nome: 'NEONATAL-UNIMED' }
 ].freeze
+
+MODALITIES = [
+  { nome: 'INTER HOSPITALAR' },
+  { nome: 'EVENTO' },
+  { nome: 'KM' }
+].freeze
