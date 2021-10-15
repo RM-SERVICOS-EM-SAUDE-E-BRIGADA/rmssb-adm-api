@@ -44,11 +44,10 @@ namespace :dev do
     puts '------ UNIDADES HOSPITALARES EXCLUÍDAS ------'
 
     puts '------ INSERINDO UNIDADES HOSPITALARES NOVAMENTE ------'
-    HOSPITAL_UNITIES.each do |hospitalUnity|
-      HospitalUnity.create!(hospitalUnity)
+    HOSPITAL_UNITIES.each do |hospital_unity|
+      HospitalUnity.create!(hospital_unity)
     end
 
-    
     sleep(0.5)
     puts '------ RESENTANDO RAZÕES PARA CANCELAMENTO ------'
     ActiveRecord::Base.connection.execute('TRUNCATE hospital_unities RESTART IDENTITY')
@@ -56,8 +55,8 @@ namespace :dev do
     puts '------ RAZÕES PARA CANCELAMENTO EXCLUÍDAS ------'
 
     puts '------ INSERINDO RAZÕES PARA CANCELAMENTO NOVAMENTE ------'
-    CANCELLATION_REASONS.each do |cancellationReason|
-      CancellationReason.create!(cancellationReason)
+    CANCELLATION_REASONS.each do |cancellation_reason|
+      CancellationReason.create!(cancellation_reason)
     end
   end
 end

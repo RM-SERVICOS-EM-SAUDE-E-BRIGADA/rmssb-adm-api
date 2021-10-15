@@ -14,7 +14,7 @@
 class Category < ApplicationRecord
   include SharedMethods
   before_create :activate
-  before_create :setUpcasedName
+  before_create :set_upcased_name
   validates :nome, presence: true
   validates :nome, uniqueness: { case_sensitive: true }
 end

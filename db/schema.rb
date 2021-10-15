@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_15_132820) do
+ActiveRecord::Schema.define(version: 2021_10_15_153433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_10_15_132820) do
     t.string "nome"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["nome"], name: "index_cancellation_reasons_on_nome", unique: true
   end
 
   create_table "categories", force: :cascade do |t|
@@ -36,13 +37,18 @@ ActiveRecord::Schema.define(version: 2021_10_15_132820) do
     t.decimal "valor", precision: 14, scale: 2, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["nome"], name: "index_destinies_on_nome", unique: true
   end
+
+# Could not dump table "employees" because of following StandardError
+#   Unknown type 'employee_funcao' for column 'funcao'
 
   create_table "hospital_unities", force: :cascade do |t|
     t.boolean "status", null: false
     t.string "nome", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["nome"], name: "index_hospital_unities_on_nome", unique: true
   end
 
   create_table "modalities", force: :cascade do |t|

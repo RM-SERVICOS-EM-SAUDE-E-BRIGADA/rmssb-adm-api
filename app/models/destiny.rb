@@ -11,11 +11,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-# ORIGEM DESTINOS
 class Destiny < ApplicationRecord
   include SharedMethods
   before_create :activate
-  before_create :setUpcasedName
+  before_create :set_upcased_name
   validates :nome, presence: true
   validates :nome, uniqueness: { case_sensitive: true }
 end

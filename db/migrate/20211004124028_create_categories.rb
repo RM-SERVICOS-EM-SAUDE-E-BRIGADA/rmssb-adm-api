@@ -7,6 +7,6 @@ class CreateCategories < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-     add_index :categories, :nome, unique: true
+    add_index :categories, :nome, unique: true
   end
 end

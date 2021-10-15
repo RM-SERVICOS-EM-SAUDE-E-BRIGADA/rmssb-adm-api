@@ -23,7 +23,7 @@ Documentation:
 # código, então é importante poder ter esses arquivos do tamanho necessário
 Metrics/BlockLength:
   IgnoredMethods: ['describe', 'context', 'feature', 'scenario', 'let']
-  Max: 40
+  Max: 80
 
 # Maximo de caracteres de uma linha
 Metrics/LineLength:

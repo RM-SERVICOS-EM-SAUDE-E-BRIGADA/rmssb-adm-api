@@ -6,5 +6,6 @@ class CreateHospitalUnities < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    add_index :hospital_unities, :nome, unique: true
   end
 end

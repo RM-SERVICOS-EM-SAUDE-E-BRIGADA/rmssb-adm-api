@@ -9,7 +9,7 @@ module SharedMethods
     self.status = (value)
   end
 
-  def setUpcasedName
-    self.nome.upcase!
+  def set_upcased_name
+    nome.upcase!
   end
 end
