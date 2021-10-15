@@ -21,6 +21,7 @@
 #  updated_at       :datetime         not null
 #  funcao           :enum
 #
+# @abstract
 class Person < ApplicationRecord
   self.table_name = 'employees'
 

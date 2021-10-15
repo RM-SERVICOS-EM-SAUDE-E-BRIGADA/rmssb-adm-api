@@ -20,7 +20,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  funcao           :enum
-#
+# @singleton
 class Employee < Person
   enum funcao: {
     motorista: 'Motorista',
@@ -32,4 +32,8 @@ class Employee < Person
     medico: 'Médico',
     call_center: 'Call-Center'
   }
+
+  def my_function
+    raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
+  end
 end
