@@ -36,5 +36,28 @@ namespace :dev do
     DESTINIES.each do |destiny|
       Destiny.create!(destiny)
     end
+
+    sleep(0.5)
+    puts '------ RESENTANDO UNIDADES HOSPITALARES ------'
+    ActiveRecord::Base.connection.execute('TRUNCATE hospital_unities RESTART IDENTITY')
+    sleep(2)
+    puts '------ UNIDADES HOSPITALARES EXCLUÍDAS ------'
+
+    puts '------ INSERINDO UNIDADES HOSPITALARES NOVAMENTE ------'
+    HOSPITAL_UNITIES.each do |hospitalUnity|
+      HospitalUnity.create!(hospitalUnity)
+    end
+
+    
+    sleep(0.5)
+    puts '------ RESENTANDO RAZÕES PARA CANCELAMENTO ------'
+    ActiveRecord::Base.connection.execute('TRUNCATE hospital_unities RESTART IDENTITY')
+    sleep(2)
+    puts '------ RAZÕES PARA CANCELAMENTO EXCLUÍDAS ------'
+
+    puts '------ INSERINDO RAZÕES PARA CANCELAMENTO NOVAMENTE ------'
+    CANCELLATION_REASONS.each do |cancellationReason|
+      CancellationReason.create!(cancellationReason)
+    end
   end
 end

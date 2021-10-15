@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
-# Table name: categories
+# Table name: cancellation_reasons
 #
 #  id         :bigint           not null, primary key
 #  status     :boolean
@@ -10,8 +8,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-# CATEGORIAS
-class Category < ApplicationRecord
+# RAZÕES PARA CANCELAMENTO
+class CancellationReason < ApplicationRecord
   include SharedMethods
   before_create :activate
   before_create :setUpcasedName

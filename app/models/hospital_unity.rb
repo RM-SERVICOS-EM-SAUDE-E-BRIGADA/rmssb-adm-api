@@ -1,17 +1,15 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
-# Table name: categories
+# Table name: hospital_unities
 #
 #  id         :bigint           not null, primary key
-#  status     :boolean
-#  nome       :string
+#  status     :boolean          not null
+#  nome       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-# CATEGORIAS
-class Category < ApplicationRecord
+# UNIDADES HOSPITALARES
+class HospitalUnity < ApplicationRecord
   include SharedMethods
   before_create :activate
   before_create :setUpcasedName

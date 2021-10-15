@@ -13,6 +13,7 @@
 # MODALIDADES
 class Modality < ApplicationRecord
   include SharedMethods
+  before_create :activate
   before_create :setUpcasedName
   validates :nome, presence: true
   validates :nome, uniqueness: { case_sensitive: true }

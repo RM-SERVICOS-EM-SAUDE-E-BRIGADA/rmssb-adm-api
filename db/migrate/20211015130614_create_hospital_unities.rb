@@ -1,0 +1,10 @@
+class CreateHospitalUnities < ActiveRecord::Migration[6.1]
+  def change
+    create_table :hospital_unities do |t|
+      t.boolean :status, null: false
+      t.string :nome, null: false
+
+      t.timestamps
+    end
+  end
+end
