@@ -2,17 +2,19 @@
 
 # == Schema Information
 #
-# Table name: categories
+# Table name: destinies
 #
 #  id         :bigint           not null, primary key
-#  status     :boolean
-#  nome       :string
+#  status     :boolean          not null
+#  nome       :string           not null
+#  valor      :decimal(14, 2)   not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 FactoryBot.define do
-  factory :category do
+  factory :destiny do
     status { false }
-    decricao { 'MyString' }
+    nome { 'MyString' }
+    valor { '9.99' }
   end
 end

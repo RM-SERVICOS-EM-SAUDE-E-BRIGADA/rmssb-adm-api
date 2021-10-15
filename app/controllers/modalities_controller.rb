@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ModalitiesController < ApplicationController
-  before_action :set_modality, only: %i[show edit update destroy]
+  before_action :set_modality, only: %i[update destroy]
 
   def index
     @modalities = Modality.all
@@ -29,11 +29,12 @@ class ModalitiesController < ApplicationController
   def destroy; end
 
   private
-    def resource_params
-      ActiveModelSerializers::Deserialization.jsonapi_parse(params)
-    end
 
-    def set_modality
-      @modality = Modality.find(params[:id])
-    end
+  def resource_params
+    ActiveModelSerializers::Deserialization.jsonapi_parse(params)
+  end
+
+  def set_modality
+    @modality = Modality.find(params[:id])
+  end
 end

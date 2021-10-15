@@ -8,4 +8,8 @@ module SharedMethods
   def activate_or_deactivate=(value)
     self.status = (value)
   end
+
+  def setUpcasedName
+    self.nome.upcase!
+  end
 end
